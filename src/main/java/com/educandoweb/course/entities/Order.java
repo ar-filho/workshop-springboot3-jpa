@@ -3,6 +3,9 @@ package com.educandoweb.course.entities;
 import java.io.Serializable;
 import java.time.Instant;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +24,7 @@ public class Order implements Serializable {
 	private Long id;
 	private Instant moment;
 
+//	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private User client;
